@@ -1,0 +1,39 @@
+name: Deploy Web App
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+# Bu izin, makinenin web sitesi dosyalarını GitHub Pages'e yazabilmesi için zorunludur.
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 🏗 Kodları Çek
+        uses: actions/checkout@v4
+      
+      - name: 🟢 Node.js Kurulumu (v22)
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      
+      - name: 📦 Kütüphaneleri Yükle
+        run: npm install
+        
+      - name: 🛠 Web Dönüştürücüyü Kur
+        run: npm install @expo/webpack-config --save-dev
+      
+      - name: 🌐 Web Uygulamasını Derle
+        run: npx expo export:web --non-interactive
+      
+      - name: 🚀 Canlıya Al (GitHub Pages)
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./web-build
+          

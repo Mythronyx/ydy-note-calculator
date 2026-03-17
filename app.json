@@ -3,51 +3,10 @@
     "name": "YDY Not Hesaplama",
     "slug": "ydy-note-calculator",
     "version": "1.0.0",
-    "scheme": "ydy-note-calculator",
     "orientation": "portrait",
-    "icon": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'%3E%3Crect fill='%23a855f7' width='192' height='192' rx='40'/%3E%3Ctext x='50%25' y='50%25' font-size='100' font-weight='bold' fill='white' text-anchor='middle' dominant-baseline='middle'%3EYDY%3C/text%3E%3C/svg%3E",
     "userInterfaceStyle": "dark",
-    "splash": {
-      "image": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 1024'%3E%3Crect fill='%230f172a' width='1024' height='1024'/%3E%3Crect fill='%23a855f7' x='100' y='100' width='824' height='824' rx='100'/%3E%3Ctext x='512' y='512' font-size='300' font-weight='bold' fill='white' text-anchor='middle' dominant-baseline='middle'%3EYDY%3C/text%3E%3C/svg%3E",
-      "resizeMode": "contain",
-      "backgroundColor": "#0f172a"
-    },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
-    "ios": {
-      "supportsTabletMode": true,
-      "bundleIdentifier": "com.alparslan.ydynote",
-      "buildNumber": "1"
-    },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 108 108'%3E%3Ccircle cx='54' cy='54' r='54' fill='%23a855f7'/%3E%3Ctext x='54' y='54' font-size='50' font-weight='bold' fill='white' text-anchor='middle' dominant-baseline='middle'%3EYDY%3C/text%3E%3C/svg%3E",
-        "backgroundColor": "#a855f7"
-      },
-      "package": "com.alparslan.ydynote",
-      "versionCode": 1,
-      "permissions": []
-    },
     "platforms": [
-      "ios",
-      "android",
       "web"
-    ],
-    "plugins": [
-      [
-        "expo-splash-screen",
-        {
-          "image": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 1024'%3E%3Crect fill='%230f172a' width='1024' height='1024'/%3E%3Crect fill='%23a855f7' x='100' y='100' width='824' height='824' rx='100'/%3E%3Ctext x='512' y='512' font-size='300' font-weight='bold' fill='white' text-anchor='middle' dominant-baseline='middle'%3EYDY%3C/text%3E%3C/svg%3E",
-          "resizeMode": "contain",
-          "backgroundColor": "#0f172a"
-        }
-      ]
-    ],
-    "extra": {
-      "eas": {
-        "projectId": "qNbDuQetP8wQrJFFQmp09xGOw9RmBi0nNlZLuonN"
-      }
-    }
+    ]
   }
 }

@@ -19,8 +19,9 @@ jobs:
       - name: 🟢 Node.js Kurulumu (v24)
         uses: actions/setup-node@v4
         with:
-          node-version: '24' # 2026 standartları için güncellendi
+          node-version: '24'
       
+      # Önbellek sorunlarını önlemek için temiz kurulum yapıyoruz
       - name: 📦 Kütüphaneleri Yükle
         run: npm install
         
@@ -28,7 +29,7 @@ jobs:
         run: npm install @expo/webpack-config --save-dev
       
       - name: 🌐 Web Uygulamasını Derle
-        run: npx expo export:web --non-interactive
+        run: CI=1 npx expo export:web
       
       - name: 🚀 Canlıya Al (GitHub Pages)
         uses: peaceiris/actions-gh-pages@v3

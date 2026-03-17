@@ -5,8 +5,14 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "userInterfaceStyle": "dark",
-    "platforms": [
-      "web"
-    ]
+    "primaryColor": "#a855f7",
+    "web": {
+      "name": "YDY Not Hesaplama",
+      "shortName": "YDY Not",
+      "description": "YDY Sınav Notu Hesaplama Sistemi",
+      "display": "standalone",
+      "backgroundColor": "#0f172a",
+      "themeColor": "#a855f7"
+    }
   }
 }

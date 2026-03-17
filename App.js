@@ -8,10 +8,7 @@ export default function App() {
   // MUTLAK ÇEVİRİ ENGELLEME PROTOKOLÜ
   useEffect(() => {
     if (Platform.OS === 'web') {
-      // Tarayıcıya sitenin orijinal dilinin Türkçe olduğunu kesin olarak bildirir.
       document.documentElement.lang = 'tr';
-      
-      // Google Çeviri'nin (ve diğer botların) otomatik çeviri önermesini tamamen yasaklar.
       const meta = document.createElement('meta');
       meta.name = 'google';
       meta.content = 'notranslate';
@@ -63,10 +60,11 @@ export default function App() {
       };
     } else {
       if (!grades.final) {
+        // GÜNCELLENEN KISIM: Sarı uyarı yerine Kırmızı "Finale Kaldınız" durumu
         finalResult = {
           ortalama: ortalama.toFixed(2),
-          durum: 'Final Sınavına Giriniz',
-          renkClass: 'warning',
+          durum: 'Finale Kaldınız',
+          renkClass: 'danger',
           detay: `Ortalamanız ${ortalama.toFixed(2)} puandır. Final notunu girin.`,
         };
         setResults(finalResult);
@@ -159,7 +157,7 @@ export default function App() {
     if (!results) return '#6b7280';
     if (results.renkClass === 'success') return '#10b981';
     if (results.renkClass === 'warning') return '#eab308';
-    return '#ef4444';
+    return '#ef4444'; // 'danger' ve 'fail' durumlarında Kırmızı renk üretir
   };
 
   return (
@@ -544,3 +542,4 @@ const styles = StyleSheet.create({
     fontSize: 12,
   },
 });
+                

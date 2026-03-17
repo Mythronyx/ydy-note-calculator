@@ -5,7 +5,6 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
-# Bu izin, makinenin web sitesi dosyalarını GitHub Pages'e yazabilmesi için zorunludur.
 permissions:
   contents: write
 
@@ -17,10 +16,10 @@ jobs:
       - name: 🏗 Kodları Çek
         uses: actions/checkout@v4
       
-      - name: 🟢 Node.js Kurulumu (v22)
+      - name: 🟢 Node.js Kurulumu (v24)
         uses: actions/setup-node@v4
         with:
-          node-version: '22'
+          node-version: '24' # 2026 standartları için güncellendi
       
       - name: 📦 Kütüphaneleri Yükle
         run: npm install
@@ -36,4 +35,3 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./web-build
-          

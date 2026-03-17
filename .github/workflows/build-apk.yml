@@ -1,0 +1,41 @@
+name: Build APK
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🏗 Checkout code
+        uses: actions/checkout@v4
+
+      - name: 🟢 Setup Node.js (v22)
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: 📦 Install dependencies
+        run: npm install
+
+      - name: 🚀 Setup Expo & EAS
+        uses: expo/expo-github-action@v8
+        with:
+          expo-version: latest
+          eas-cache: true
+          token: ${{ secrets.EAS_TOKEN }}
+
+      - name: 🔨 Build APK
+        run: eas build --platform android --profile preview --non-interactive --local --output="./ydy-note.apk"
+
+      - name: 📂 Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: YDY-Note-Calculator-APK
+          path: ./ydy-note.apk
+          retention-days: 30
+          
